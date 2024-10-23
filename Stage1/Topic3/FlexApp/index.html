@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex App</title>
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      .flex-container {
+        height: 800px;
+        background-color: DodgerBlue;
+        /* padding: 20px; */
+        /* min-height: 600px; */
+
+        /* Flex Container */
+        display: flex;
+        /* flex-wrap: wrap; */
+
+        /* Direction */
+        /* flex-direction: row; */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column; */
+        /* flex-direction: column-reverse; */
+
+        /* Justify */
+        /* justify-content: center; */
+        /* justify-content: space-around; */
+        /* justify-content: space-evenly; */
+        /* justify-content: space-between; */
+        /* justify-content: flex-end; */
+        /* justify-content: flex-start; */
+
+        /* Align */
+        /* align-items: center; */
+        /* align-items: flex-end; */
+        /* align-items: flex-start; */
+
+        /* align-content: flex-end; */
+        /* align-content: flex-end; */
+        /* align-content: space-between; */
+
+        /* gap: 12px; */
+      }
+
+      /* Child */
+      .box1,
+      .box2,
+      .box3 {
+        background-color: #f1f1f1;
+        /* width: 100px; */
+        height: 100px;
+        padding: 20px;
+        font-size: 30px;
+        border: 1px solid black;
+      }
+
+      /* ======== */
+
+      /* The flex item properties are:
+          order
+          flex-grow
+          flex-shrink
+          flex-basis
+          flex
+          align-self */
+
+      .box1 {
+        /* Flex childs */
+        /* flex-grow: 2; */
+        /* flex-basis: 20%; */
+        order: 3;
+        flex-grow: 2;
+
+        /* Flex Container */
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .box2 {
+        /* Flex childs */
+
+        /* flex-basis: 60%; */
+        /* flex-grow: 3; */
+        order: 1;
+        flex-grow: 1;
+      }
+
+      .box3 {
+        /* Flex childs */
+        /* flex-basis: 20%; */
+        /* flex-grow: 1; */
+        order: 2;
+        flex-grow: 3;
+      }
+
+      .box-child {
+        width: 10px;
+        height: 10px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="box1">
+        1
+        <div class="box-child"></div>
+        <div class="box-child"></div>
+        <div class="box-child"></div>
+      </div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
+    </div>
+  </body>
+</html>

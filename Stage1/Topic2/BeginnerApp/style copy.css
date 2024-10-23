@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* .box {
+  width: 200px; 
+  height: 200px;
+  background-color: red;
+} */
+
+/* .box {
+  width: 12.5rem; 
+  height: 12.5rem;
+  background-color: red;
+} */
+
+.box {
+  /* min-width: 200px; */
+  /* width: 50%; */
+  /* width: 750px; */
+  /* height: 200px; */
+  /* height: auto; */
+  /* min-height: 300px; Eger kontent cox azdirsa onda qirmizi qutu 300 olurki seliqeli pozulmasin */
+  /* background-color: red; */
+
+  width: 250px;
+  height: 350px;
+  background-color: yellow;
+
+  margin: 20px;
+
+  border-width: 4px;
+  border-style: dashed;
+  border-color: red;
+
+  border-width: 1px;
+  /* border-style: dashed; */
+  border-style: solid;
+  border-color: red;
+
+  outline-width: 4px;
+  outline-style: dashed;
+  outline-style: dashed;
+  outline-color: green;
+
+  /* 1ci deyer x oxu uzre hereket*/
+  /* 2ci deyer y oxu uzre hereket*/
+  /* 3ci deyer gorunmez olmasi*/
+  /* 4ci deyer kolkenin ehatesini boyutmek olmasi*/
+
+  /* box-shadow: 20px 20px 20px 100px green; */
+  box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
+}
+
+/* butun spanlar divin icindeki */
+/* .bgDiv span {
+  background-color: aqua;
+} */
+
+/* 1ci spanlar divin icindeki */
+.bgDiv > span {
+  background-color: aqua;
+}
+
+.bgDiv + p {
+  background-color: red;
+}
+
+/* input[type="password"] {
+} */
+
+/* .bgDiv span:nth-child(1) {
+    background-color: aqua;
+  } */
+
+.btn {
+  /* display: none; */
+  /* visibility: hidden; */
+
+  /* border-radius: 10px 10px 20px 30px; */
+  border-radius: 8px;
+  background: rgb(10, 109, 20);
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 6px 16px;
+  /* padding: 6px 12px 20px 10px; */
+  /* padding: 12px; */
+}
+
+.btn:hover {
+  background-color: rgb(51, 119, 51);
+}
+
+.btn:active {
+  background-color: rgb(9, 64, 9);
+}
+
+.btn:disabled {
+  background: rgb(209, 255, 209);
+}
+
+.list {
+  background-color: blue;
+}
+
+.list li:nth-child(odd) {
+  color: red;
+}
+
+/* .list li:first-child {
+  color: red;
+}
+
+.list li:last-child {
+  color: green;
+} */
+
+.form-input {
+  /* width: 200px; */
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  color: green;
+}
+
+.form-input::placeholder {
+  color: red;
+}

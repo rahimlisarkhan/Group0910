@@ -1,0 +1,17 @@
+:root {
+  /* COLORS */
+  --mainColor: #ffa12e;
+  --greenMain: #71a894;
+  --greenMain800: #5a8575;
+  --textColor: #303031;
+  --textSubColor: #66645e;
+  --borderColor: #e7e7e7;
+  --white: #fff;
+
+  /* SPACE */
+  --littleSpace: 12px;
+
+  /* FONTS */
+  --fontOpen: "Open Sans", sans-serif;
+  --fontRoboto: "Roboto", sans-serif;
+}

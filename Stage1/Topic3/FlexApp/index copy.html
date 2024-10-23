@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex App</title>
+
+    <style>
+      .flex-container {
+        height: 800px;
+        background-color: DodgerBlue;
+        padding: 20px;
+        /* min-height: 600px; */
+
+        /* Flex Container */
+        display: flex;
+        /* flex-wrap: wrap; */
+
+        /* Direction */
+        /* flex-direction: row; */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column; */
+        /* flex-direction: column-reverse; */
+
+        /* Justify */
+        /* justify-content: center; */
+        /* justify-content: space-around; */
+        /* justify-content: space-evenly; */
+        /* justify-content: space-between; */
+        /* justify-content: flex-end; */
+        /* justify-content: flex-start; */
+
+        /* Align */
+        /* align-items: center; */
+        /* align-items: flex-end; */
+        /* align-items: flex-start; */
+
+        /* align-content: flex-end; */
+        /* align-content: flex-end; */
+        /* align-content: space-between; */
+
+        gap: 12px;
+      }
+
+      /* Child */
+      .flex-container > div {
+        background-color: #f1f1f1;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        font-size: 30px;
+      }
+
+      /* ======== */
+
+      .box1 {
+        /* //Parent container properties */
+        display: flex;
+        gap: 4px;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box-child {
+        width: 10px;
+        height: 10px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="box1">
+        1
+        <div class="box-child"></div>
+        <div class="box-child"></div>
+        <div class="box-child"></div>
+      </div>
+      <div>2</div>
+      <div>3</div>
+      <!-- <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div>
+      <div>10</div> -->
+    </div>
+  </body>
+</html>

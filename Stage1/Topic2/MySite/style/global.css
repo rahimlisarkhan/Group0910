@@ -1,0 +1,74 @@
+/* HEADER */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  display: table;
+  border-bottom: 3px solid rgb(6, 131, 89);
+  /* height: 120px; */
+}
+
+/* LEFT SIDE */
+.company-content {
+  margin-top: 14px;
+  float: left;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  float: left;
+  margin-top: 14px;
+}
+
+.company-content h1 {
+  float: left;
+}
+
+.navbar {
+  float: right;
+  margin-top: 30px;
+}
+
+/* RIGHT SIDE */
+
+.nav-list .nav-item {
+  display: inline;
+  margin-right: 16px;
+  /* float: left; */
+}
+
+.nav-link {
+  color: rgb(27, 27, 27);
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: rgb(1, 90, 60);
+}
+
+.register-btn {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 16px;
+  background-color: rgb(6, 131, 89);
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  margin-left: 20px;
+}
+
+.register-btn:hover {
+  background-color: rgb(1, 90, 60);
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        background-color: aquamarine;
+        height: 100px;
+      }
+
+      .main {
+        min-height: 100vh;
+        background-color: blanchedalmond;
+      }
+
+      .footer {
+        background-color: rgb(38, 187, 137);
+        height: 400px;
+      }
+
+      .bg {
+        background-color: blue;
+      }
+
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* // Tablet 800 - 1200 */
+      @media screen and (max-width: 1200px) {
+        .container {
+          width: 800px;
+        }
+      }
+
+      /* // MOBILE 0 - 800 */
+      @media screen and (max-width: 800px) {
+        .container {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="bg">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
+          provident, laboriosam explicabo assumenda iure eos quia eaque culpa
+          consequuntur quo incidunt dolorem nulla vitae excepturi amet. Adipisci
+          ipsa aliquid culpa.
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="bg">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
+          provident, laboriosam explicabo assumenda iure eos quia eaque culpa
+          consequuntur quo incidunt dolorem nulla vitae excepturi amet. Adipisci
+          ipsa aliquid culpa.
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="bg">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
+          provident, laboriosam explicabo assumenda iure eos quia eaque culpa
+          consequuntur quo incidunt dolorem nulla vitae excepturi amet. Adipisci
+          ipsa aliquid culpa.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

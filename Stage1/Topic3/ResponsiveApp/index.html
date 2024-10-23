@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      .content {
+        background-color: red;
+        font-size: 24px;
+        color: white;
+        height: 200px;
+      }
+
+      .navbar {
+        display: flex;
+        /* ... */
+      }
+
+      .nav-mobile-btn {
+        background-color: red;
+        padding: 12px;
+        color: white;
+        border-radius: 12px;
+
+        align-items: center;
+        justify-content: center;
+
+        display: none;
+      }
+
+      .mobile-navbar {
+        display: flex;
+
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        bottom: 0;
+      }
+
+      /*TABLET -  900 - 1200 */
+      /* @media only screen and (max-width: 1200px) {
+        .content {
+          background-color: blue;
+        }
+      } */
+
+      /*TABLET & MOBILE -  600 - 900 */
+      @media only screen and (max-width: 900px) {
+        /* @media only screen and (min-width: 600px) and (max-width: 900px) { */
+        .content {
+          background-color: green;
+        }
+      }
+
+      /*PHONE -  0 - 600 */
+      @media only screen and (max-width: 600px) {
+        .content {
+          background-color: yellow;
+        }
+
+        .navbar {
+          display: none;
+        }
+
+        .nav-mobile-btn {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">Lorem</div>
+    <button class="nav-mobile-btn">hamburger button</button>
+
+    <nav class="mobile-navbar">
+      <ul>
+        <li>Home</li>
+        <li>Home</li>
+        <li>Home</li>
+        <li>Home</li>
+      </ul>
+    </nav>
+
+    <div class="navbar">
+      <ul>
+        <li>Home</li>
+        <li>Home</li>
+        <li>Home</li>
+        <li>Home</li>
+      </ul>
+    </div>
+  </body>
+</html>

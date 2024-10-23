@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Company</title>
+
+    <style>
+      /* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
+
+      /* @font-face {
+        font-family: MyRoboto;
+        src: url("./fonts/Roboto_light.tff");
+      } */
+
+      body {
+        margin: 0;
+        padding: 0;
+        /* font-family: MyRoboto, sans-serif; */
+        font-family: "Roboto", sans-serif;
+      }
+
+      .header {
+        height: 102px;
+        border-bottom: 3px solid teal;
+
+        padding: 0 12px;
+
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        flex-grow: 2;
+        height: 60px;
+        font-size: 18px;
+        color: teal;
+
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+
+        object-fit: cover;
+      }
+
+      .navbar {
+        flex-grow: 6;
+
+        height: 60px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 24px;
+      }
+
+      .nav-item {
+        list-style: none;
+      }
+
+      .nav-item a {
+        color: rgb(28, 28, 28);
+        transition: all 0.2s;
+
+        font-size: 18px;
+        text-decoration: none;
+      }
+
+      .nav-item a:hover {
+        color: teal;
+      }
+
+      .btn-group {
+        flex-grow: 2;
+        height: 60px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        background-color: teal;
+        color: white;
+        border-radius: 12px;
+        transition: all 0.2s;
+
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: rgb(0, 86, 86);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small_2x/abstract-circle-logo-icon-free-png.png"
+        />
+        <h1>Company</h1>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="#">Blog</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="btn-group">
+        <a class="btn">Get Started</a>
+        <a class="btn">Sign in</a>
+      </div>
+    </header>
+  </body>
+</html>

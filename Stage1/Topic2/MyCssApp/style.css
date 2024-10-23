@@ -1,0 +1,34 @@
+/* Fonts */
+.desc {
+  color: blueviolet;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* Header */
+.bg_desc {
+  background-color: blue;
+}
+
+.big_title {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.box {
+  width: 350px;
+  height: 350px;
+
+  /* Kenardan */
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+
+  /* Daxilden */
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  background-color: red;
+}

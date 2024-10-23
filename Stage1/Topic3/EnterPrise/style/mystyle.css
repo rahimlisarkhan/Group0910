@@ -1,0 +1,29 @@
+.border-bottom {
+  border: 1px solid gray;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items {
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .sm-border-bottom-none {
+    border: none;
+  }
+
+  .sm-justify-content-center {
+    justify-content: center;
+  }
+}

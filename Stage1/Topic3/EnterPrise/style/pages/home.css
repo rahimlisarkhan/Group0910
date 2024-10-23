@@ -1,0 +1,148 @@
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  border-bottom: 1px solid var(--borderColor);
+  background-color: var(--white);
+
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fontOpen);
+  color: var(--textColor);
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link {
+  color: var(--textColor);
+  font-weight: 600;
+}
+
+/* .nav-item:last-child .nav-link {
+  color: var(--greenMain);
+} */
+
+.active {
+  color: var(--greenMain);
+}
+
+/* SECTION INFO */
+
+.section-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+
+  padding: 48px 32px;
+}
+
+.section-info img {
+  width: 100%;
+  height: 100%;
+}
+
+.info_content {
+  flex-basis: 50%;
+}
+
+.info_image {
+  flex-basis: 50%;
+}
+
+.info_content_title {
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 80px;
+  padding-bottom: 24px;
+  color: var(--textColor);
+}
+
+.info_content_desc {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--textSubColor);
+  font-family: var(--fontOpen);
+  line-height: 32px;
+  padding-bottom: 40px;
+}
+
+.btn {
+  color: var(--white);
+  background-color: var(--greenMain);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 24px;
+  border-radius: 8px;
+
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--greenMain800);
+}
+
+.nav-mobile-btn {
+  display: none;
+}
+
+/* Responsive */
+
+/* BIG MOBILE & TABLET */
+@media screen and (max-width: 1000px) {
+  .header {
+    border: none;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .nav-mobile-btn {
+    display: block;
+  }
+
+  .section-info {
+    flex-direction: column-reverse;
+  }
+
+  .info_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info_content_title {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 0;
+    line-height: 40px;
+  }
+
+  .info_content_desc {
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 48px;
+  }
+}
+
+/* SMALL MOBILE */
+@media screen and (max-width: 500px) {
+  .logo h1 {
+    display: none;
+  }
+}
