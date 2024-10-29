@@ -73,21 +73,21 @@
 // // <=	less than or equal to
 // // ?	ternary operator
 
-// var age = 18;
+var age = 18;
 
-// var condition = 18;
+var condition = 18;
 // // var b = "4";
 
 // // var result = a > b; // true
-// var result = age >= condition; // true
-// // var result = a < b; // false
-// // var result = a === b; //false
-// // var result = a == b; //true
+var result = age >= condition; // true
+var result = a < b; // false
+var result = a === b; //false
+var result = a == b; //true
 
-// // var result = a * b; // coercion
+var result = a * b; // coercion
 
-// // var result = a != b; // true
-// // var result = a !== b; // true
+var result = a != b; // true
+var result = a !== b; // true
 
 var citizen = "en";
 var age = 16;
