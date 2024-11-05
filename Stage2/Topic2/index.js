@@ -1,69 +1,99 @@
-var fruits = [
-  "Mango",
-  "Pie",
-  "Apple",
-  "Banana",
-  "Watermelon",
-  "Avocado",
-  "Kiwi",
-];
+// name + " plays banjo"
+// name + " does not play banjo"
 
-var arr = [4, 5];
+// const full_name = "Adam";
 
-// var arr = [
-//   [1, 2],
-//   ["t", "a", ["age1", "age2"]],
-//   [2, 7],
-// ];
+// Solition 1 Soltan
+// const firstLetter = name[0]
 
-// var result = fruits.includes("Banana"); // true
-// var result = fruits.indexOf("Heyva"); // -1
-// var result = fruits.indexOf("Heyva"); // -1
-// var result = fruits.join("-"); // array convert to string
-// var result = fruits.join("-"); // array convert to string
-// var result = arr.flat(2);
+// if(firstLetter == "R" || firstLetter == "r"){
 
-// fruits.push(100);
-// var silinen = fruits.pop();
-// console.log("silinen", silinen);
+// }else{
 
-// var silinen = fruits.shift();
-// console.log(silinen);
+// }
 
-// fruits.unshift(100);
+// Solition 2 Durre
+// const lowercaseName = full_name.toLowerCase();
+// const isHasR = lowercaseName.startsWith("r");
 
-// var result = fruits.concat(arr); // new array yaradir bizim ramda
-// var result = fruits.concat(arr); // new array yaradir bizim ramda
+// if (isHasR) {
+//   // ...
+// } else {
+//   //...
+// }
 
-// var result = fruits.slice(2, 5);
+// Solition 3 Mussa
+// const firstLatter = atb[0].toLowerCase();
+// if (firstLatter == "r") {
+//   alert("r le basladi");
+// } else {
+// }
 
-// var silinenler = fruits.splice(1, 3);
-// fruits.splice(2, 1, "B", "C", "D");
+// Solition 4
+// const card = "41-69-45-66-32-11-33-65";
+// // const card = prompt("Kartinizin son reqemlerin daxil edin");
 
-fruits.reverse();
+// const cardList = card.split("-");
 
-console.log(fruits);
+// const cartListLength = cardList.length;
 
-// var fruit = "Watermelon";
+// const licenseNum = cardList[cartListLength - 2];
 
-// fruit[0] = "A";
+// const result = licenseNum % 2 == 0;
 
-// console.log(fruit);
+// if (result) {
+//   console.log("Kapital Bank");
 
-// console.log(fruit[0]);
+//   document.getElementById("cardImg").src =
+//     "https://www.kapitalbank.az/images/cards/M/visa-business1642748176.png";
+// } else {
+//   console.log("Diger Bank");
+//   document.getElementById("cardImg").src =
+//     "https://abb-bank.az/storage/uploads/1632831275_visa-miles-premium.webp?v=646";
+// }
 
-// console.log(fruit.includes("e"));
+// Kapital Bank
+// Diger Bank
 
-// var result = fruits.includes("Banana"); // true
-// var result = fruits.indexOf("Heyva"); // -1
-// var result = fruits.indexOf("Heyva"); // -1
+// Solition 5
 
-// console.log(result);
+//* Verilen listde "John" adinin yerini tapin, sonra o adi silin ve yerine, "Ramil" adin yazin
 
-// var result = fruits[0]; //First
+// const list = ["Aydan", "John", "Cole"];
 
-// var lastElIndex = fruits.length - 2; // 6
+// const fullName = "John";
+// const resultIndex = list.indexOf(fullName); // 1
 
-// var result2 = fruits[lastElIndex]; // "Avocado"
+// // list.splice(1, 1);
+// list.splice(resultIndex, 1);
 
-// console.log("result2", result2);
+// console.log(resultIndex);
+// console.log(list);
+
+// Solition 6
+// const value = true;
+
+// if (value) {
+//   console.log("When we pass in true, we want the string 'true' as output");
+// } else {
+//   console.log("When we pass in false, we want the string 'false' as output");
+// }
+
+// let menu = ["ham", "ciz", "fri", "big"];
+
+// let userRes = prompt("Menudan hansi yemeyi isteyirsiniz?"); //?fri
+
+// // const result = menu.includes(userRes);
+// const result = menu.indexOf(userRes); // 2, -1
+
+// // if (result) {
+// if (result !== -1) {
+//   console.log("Beli bu bizde var");
+// } else {
+//   console.log("Xeyr bu bizde yoxdur");
+// }
+
+// const ...
+//... user response
+
+//
