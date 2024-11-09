@@ -25,11 +25,11 @@
 
 // // console.log(d); // 6
 
-// // // Solution4
-// // var g = 5;
+// Solution4
+// var g = 5;
 
-// // // g = g + 3;
-// // g += 3;
+// g = g + 3;
+// g += 3;
 
 // // // Solution5
 // // let v = 3;
@@ -49,10 +49,11 @@
 
 // // console.log(result);
 
-// // var a = -4;
+// var a = 4;
 
-// // a++;
-// // a++;
+// a++;
+
+// console.log("a", a);
 
 // // a--;
 // // a--;
