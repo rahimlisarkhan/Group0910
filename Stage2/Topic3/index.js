@@ -1,177 +1,70 @@
-//? Solition 1
-// for (let i = 0; i < 10; i += 2) {}
+//? 1. Grasshopper - Summation
+// assert.strictEqual(summation(1),  1);
+// assert.strictEqual(summation(2),  3);
+// assert.strictEqual(summation(8), 36);
 
-//? Solition 2
-// let list = [];
-// for (let i in list) {
-// }
+// var summation = function (num) {
+//   let sum = 0;
 
-//? Solition 3
-// let list2 = [];
-// for (let el of list2) {
-// }
+//   for (let i = 1; i <= num; i++) {
+//     sum += i;
+//   }
 
-// let list = [1,2,3,4]
+//   return sum;
+// };
 
-// for (let i = 0; i <= 100; i++) {
-//   if (i % 5 == 0 && i % 2 == 0) {
-//     console.log("value:", i);
+// summation(1);
+// summation(2);
+// summation(8);
+
+//? 2. Regex validate PIN code
+// Test.assertEquals(validatePIN("1"),false, "Wrong output for '1'")
+// Test.assertEquals(validatePIN("12"),false, "Wrong output for '12'")
+// Test.assertEquals(validatePIN("123"),false, "Wrong output for '123'")
+// Test.assertEquals(validatePIN("12345"),false, "Wrong output for '12345'")
+// Test.assertEquals(validatePIN("1234567"),false, "Wrong output for '1234567'")
+// Test.assertEquals(validatePIN("-1234"),false, "Wrong output for '-1234'")
+// Test.assertEquals(validatePIN("1.234"),false, "Wrong output for '1.234'")
+// Test.assertEquals(validatePIN("-1.234"),false, "Wrong output for '-1.234'")
+// Test.assertEquals(validatePIN("00000000"),false, "Wrong output for '00000000'")
+
+// "1.23" false
+// "123456" false
+
+// function validatePIN(pin) {
+//   let result = !isNaN(pin);
+
+//   if (!result || pin.includes(".")) {
+//     return false;
+//   } else {
+//     if (pin == "0000") {
+//       return true;
+//     }
+
+//     if (pin.length == 4 || pin.length == 6) {
+//       return true;
+//     } else if (pin <= 0) {
+//       return false;
+//     } else {
+//       return false;
+//     }
 //   }
 // }
 
-// for (let i = 50; i > 0; i--) {
-//     console.log("value:", i);
-//   }
+function validatePIN(pin) {
+  pin = pin.split("");
 
-// let people = ["Aydan", "John", "Marry", "Ashlee", "Tural", "Asif"];
+  const findNaN = pin.find((character) => !(parseInt(character) >= 0));
 
-// let people2 = [];
+  console.log("findNaN", findNaN);
 
-// for (let i = people.length - 1; i >= 0; i--) {
-//   const element = people[i];
+  if ((pin.length === 4 || pin.length === 6) && !findNaN) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-//   people2.push(element);
+const a = validatePIN("12456");
 
-//   console.log("element", element);
-// }
-
-// console.log(people2);
-
-// Solition 2
-// for (let i = 0; i < people.length; i++) {
-//   let element = people[i];
-
-//   const result = element.startsWith("A");
-
-//   if (result) {
-//     console.log("element", element);
-//   }
-// }
-
-// let people = ["Aydan", "John", "Marry", "Ashlee", "Tural", "Asif"];
-
-// for (let el of people) {
-//   //   console.log("element", el);
-
-//   if (el == "Ashlee") {
-//     console.log("element", el);
-//     break;
-//   }
-
-//   console.log("element", el);
-// }
-
-// for (let i in people) {
-//   const el = people[i];
-
-//   console.log("el", el);
-// }
-
-// let i = 0;
-// while (i < 10) {
-//   console.log(i); // Butun hesablama kodlarivi yaz bitir sonra 1 vahid artir
-//   i++;
-// }
-
-// let i = 0;
-
-// do {
-//   console.log("i", i);
-//   i++;
-//   console.log("i", i);
-// } while (i < 10);
-
-// let people = ["Aydan", "John", "Marry", "Ashlee", "Tural", "Asif"];
-
-// let i = 0;
-
-// while (i < people.length) {
-//   const el = people[i];
-
-//   console.log(el);
-
-//   // ...
-
-//   i++;
-// }
-
-// let countdown = 10;
-
-// while (countdown >= 0) {
-//   console.log(countdown);
-
-//   countdown--;
-// }
-
-// let list = [5, 6, 7, 8, 9, 10, 14, 16, 17, 19];
-
-// let list2 = [];
-// //? output "6-8-10-14-16"
-
-// for (let i = 0; i < list.length; i++) {
-//   let el = list[i];
-
-//   if (el % 2 == 0) {
-//     console.log(el);
-//     list2.push(el);
-//     // list2.splice(list2.length-1,0,el)
-//   }
-// }
-
-// console.log(list2.join("-"));
-
-// let arr = [];
-
-// for (let i = 0; i < 3; i++) {
-//   const name = prompt("Enter your student name");
-//   arr.push(name);
-
-//   console.log("i", i);
-// }
-
-// for (let fullName of arr) {
-//   const result = `${fullName} is great student`;
-//   console.log(result);
-// }
-
-// console.log("arr", arr);
-
-// let list = [5, 6, 7, 9, 19, 10, 4, 14, 16, 17];
-// let min = Infinity; //
-
-// for (let i = 0; i < list.length; i++) {
-//   let el = list[i];
-
-//   if (min > el) {
-//     min = el;
-//   }
-
-//   console.log(el);
-// }
-
-// console.log("min", min);
-
-// let list = [5, 6, 7, 9, 19, 10, 4, 14, 16, 17];
-// let max = -Infinity;
-
-// for (let i = 0; i < list.length; i++) {
-//   let el = list[i];
-
-//   if (max < el) {
-//     max = el;
-//   }
-
-//   console.log(el);
-// }
-
-// console.log("max", max);
-
-// Solition1
-// var sum = 0;
-
-// for (let num of list) {
-//   sum += num;
-//   //   console.log(num);
-// }
-
-// console.log(sum); //? NaN - Not a Number
+console.log("a", a);
