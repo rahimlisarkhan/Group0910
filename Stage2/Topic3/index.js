@@ -1,70 +1,98 @@
-//? 1. Grasshopper - Summation
-// assert.strictEqual(summation(1),  1);
-// assert.strictEqual(summation(2),  3);
-// assert.strictEqual(summation(8), 36);
+// const arr = [1, true, [5, 6]];
 
-// var summation = function (num) {
-//   let sum = 0;
+// const kicikArr = arr[2]; //? [5,6]
 
-//   for (let i = 1; i <= num; i++) {
-//     sum += i;
-//   }
+// console.log(kicikArr[1]); //? 6
 
-//   return sum;
-// };
+// function A(par1, par2, part3) {
+//   console.log(par1);
 
-// summation(1);
-// summation(2);
-// summation(8);
+//   console.log(par2[1]);
 
-//? 2. Regex validate PIN code
-// Test.assertEquals(validatePIN("1"),false, "Wrong output for '1'")
-// Test.assertEquals(validatePIN("12"),false, "Wrong output for '12'")
-// Test.assertEquals(validatePIN("123"),false, "Wrong output for '123'")
-// Test.assertEquals(validatePIN("12345"),false, "Wrong output for '12345'")
-// Test.assertEquals(validatePIN("1234567"),false, "Wrong output for '1234567'")
-// Test.assertEquals(validatePIN("-1234"),false, "Wrong output for '-1234'")
-// Test.assertEquals(validatePIN("1.234"),false, "Wrong output for '1.234'")
-// Test.assertEquals(validatePIN("-1.234"),false, "Wrong output for '-1.234'")
-// Test.assertEquals(validatePIN("00000000"),false, "Wrong output for '00000000'")
-
-// "1.23" false
-// "123456" false
-
-// function validatePIN(pin) {
-//   let result = !isNaN(pin);
-
-//   if (!result || pin.includes(".")) {
-//     return false;
-//   } else {
-//     if (pin == "0000") {
-//       return true;
-//     }
-
-//     if (pin.length == 4 || pin.length == 6) {
-//       return true;
-//     } else if (pin <= 0) {
-//       return false;
-//     } else {
-//       return false;
-//     }
-//   }
+//   console.log(part3 + 60);
 // }
 
-function validatePIN(pin) {
-  pin = pin.split("");
+// A(true, [4, 5], 15);
 
-  const findNaN = pin.find((character) => !(parseInt(character) >= 0));
+// const a = 20;
 
-  console.log("findNaN", findNaN);
+// var show = function () {
+//   console.log("Show code!");
+// };
 
-  if ((pin.length === 4 || pin.length === 6) && !findNaN) {
-    return true;
-  } else {
-    return false;
-  }
+// function A(num, digerFunksiya) {
+//   console.log("A procesing...");
+
+//   digerFunksiya();
+//   // console.log(num);
+//   // console.log(digerFunksiya);
+// }
+
+// A(a, show);
+
+// function vurma(num1, num2) {
+//   const res = num1 * num2;
+//   return res;
+// }
+
+// function cixma(num1, num2) {
+//   const res = num1 - num2;
+
+//   return res;
+// }
+
+// function toplama(num1, num2) {
+//   const res = num1 + num2;
+
+//   return res;
+// }
+
+// function calcShow(title, callback) {
+//   const result = callback(12, 5);
+
+//   console.log(title, result);
+// }
+
+// calcShow("Toplama netice: ", toplama);
+// calcShow("Vurma netice: ", vurma);
+// calcShow("Cixma netice: ", cixma);
+
+// function A(num1, digerFn) {
+//   console.log("digerFn", digerFn(12, 6));
+// }
+
+// A(12, vurma);
+
+// const netice = vurma(12, 5); // 60
+// const netice = vurma; // 60
+
+// console.log(netice);
+
+// const arr = [1, 2, 3, 4];
+
+// const netice2 = arr[2]; //? 3
+// const netice2 = arr; //? [1, 2, 3, 4]
+
+function A() {
+  console.log("Taxili uyudur");
 }
 
-const a = validatePIN("12456");
+function B() {
+  console.log("Taxili qurudur");
+}
 
-console.log("a", a);
+function C() {
+  console.log("Torpagi gubreleyir");
+}
+
+function monitoring(usta, isiIcraedenMasin, benzinDeyeri) {
+  console.log("-----");
+  console.log("Usta adi", usta);
+  console.log("Istifade etdiyi benzin", benzinDeyeri);
+  isiIcraedenMasin();
+  console.log("-----");
+}
+
+monitoring("Ali", C, 20);
+monitoring("Murad", A, 30);
+monitoring("Veli", B, 10);
