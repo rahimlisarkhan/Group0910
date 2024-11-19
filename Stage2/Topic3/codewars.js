@@ -51,30 +51,57 @@
 //   }
 // }
 
-function validatePIN(pin) {
-  pin = pin.split("");
+// function validatePIN(pin) {
+//   pin = pin.split("");
 
-  const findNaN = pin.find((character) => !(parseInt(character) >= 0));
+//   const findNaN = pin.find((character) => !(parseInt(character) >= 0));
 
-  console.log("findNaN", findNaN);
+//   console.log("findNaN", findNaN);
 
-  if ((pin.length === 4 || pin.length === 6) && !findNaN) {
-    return true;
-  } else {
-    return false;
-  }
-}
+//   if ((pin.length === 4 || pin.length === 6) && !findNaN) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-const a = validatePIN("12456");
+// const a = validatePIN("12456");
 
-console.log("a", a);
+// console.log("a", a);
 
-//? 102321312 * 600000 =
+// //? 102321312 * 600000 =
 
-function convertToMin(mill) {
-  const result = mill * 60000;
+// function convertToMin(mill) {
+//   const result = mill * 60000;
 
-  return result;
-}
+//   return result;
+// }
 
-const min = convertToMin(3123232); // 43 deqiqe
+// const min = convertToMin(3123232); // 43 deqiqe
+
+// assert.deepEqual(flickSwitch(["codewars", "flick", "code", "wars"]), [true, false, false, false]);
+// assert.deepEqual(flickSwitch(["flick", "chocolate", "adventure", "sunshine"]), [false, false, false, false]);
+// assert.deepEqual(flickSwitch(["bicycle", "jarmony", "flick", "sheep", "flick"]), [true, true, false, false, true]);
+// assert.deepEqual(flickSwitch(["flick", "flick", "flick", "flick", "flick"]), [false, true, false, true, false]);
+// assert.deepEqual(flickSwitch(["john, smith, susan", "flick"]), [true, false]);
+// assert.deepEqual(flickSwitch(["bicycle"]), [true]);
+// assert.deepEqual(flickSwitch(["flick"]), [false]);
+
+// function flickSwitch(arr) {
+//   let value = true;
+//   let list = [];
+
+//   for (let el of arr) {
+//     if (el == "flick") {
+//       value = !value;
+//     }
+
+//     list.push(value);
+//   }
+
+//   return list;
+// }
+
+// const result = flickSwitch(["bicycle", "jarmony", "flick", "sheep", "flick"]);
+
+// console.log("result", result);
