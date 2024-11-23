@@ -1,18 +1,18 @@
-//? Solution 1
-// function foo() {
-//   console.log("Foo!");
+// //? Solution 1
+// // function foo() {
+// //   console.log("Foo!");
 
-//   function bar() {
-//     console.log("Bar!");
-//   }
-//   return bar;
-// }
+// //   function bar() {
+// //     console.log("Bar!");
+// //   }
+// //   return bar;
+// // }
 
-// let netice = foo();
+// // let netice = foo();
 
-// netice();
+// // netice();
 
-//? Solution 2
+// //? Solution 2
 // function foo() {
 //   console.log("Foo!");
 
@@ -29,9 +29,9 @@
 
 // let result = netice();
 
-// console.log(result);
+// // console.log(result);
 
-//? Solution 3
+// //? Solution 3
 // function innerFn() {
 //   let x = 10;
 
@@ -47,7 +47,7 @@
 
 // console.log(result);
 
-//? Solution 4
+// //? Solution 4
 // function innerFn() {
 //   let x = 10;
 
