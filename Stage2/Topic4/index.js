@@ -1,94 +1,62 @@
-//? SCOPE
+// const A = function () {
+//   // ...
+// };
 
-//? var let const
+// Solition 1
+// const A = (num1, num2) => {
+//   return num1 + num2;
+// };
 
-// var a = 10;
-// function B() {
-//   var a = 7;
+// Solition 2
+// const A = (num1, num2) => {
+//   // ...
+//   // ...
+//   // ...
+//   // ...
+//   return num1 + num2;
+// };
 
-//   function C() {
-//     var a = 2;
+// Solition 3
+// const A = (num1, num2) => num1 + num2;
 
-//     function D() {
-//       var a = 1;
+// Solition 4
+// const A = num1 => num1 + 6;
 
-//       console.log(a);
-//     }
+// Solition 5
+// const A = num1 => ( // return menasi verir ( symbol
+//   num1 + 6+ 10/2
+// );
 
-//     D();
-//   }
+// const result = A(2, 4); // 6
 
-//   C();
+let age = 18;
+let gender = "male";
+
+// let full_name = age >= 18 ? "Sukur Sukurbayli Ata adi" : "Sukur";
+
+// console.log(full_name);
+
+// const userFullname = (a, name, surname, parentName) =>
+//   a >= 18 ? `${name} ${surname} ${parentName} ${genderName}` : name;
+
+const userFullname = (a, name, surname, parentName, g) => {
+  const genderName = g == "male" ? "oglu" : "qizi";
+
+  const result =
+    a >= 18 ? `${name} ${surname} ${parentName} ${genderName}` : name;
+
+  return result;
+};
+
+// function userFullname(a, name, surname, parentName, g) {
+//   const genderName = g == "male" ? "oglu" : "qizi";
+
+//   const result =
+//     a >= 18 ? `${name} ${surname} ${parentName} ${genderName}` : name;
+
+//   return result;
 // }
 
-// B();
+const personal1 = userFullname(age, "Sukur", "Sukurbayli", "Ata", gender);
 
-// SCOPE - 3
-//*       GLOBAL LOCAL BLOCK Assign
-//* var    yes   yes   no    yes
-//* let    no    yes   yes   yes
-//* const  no    yes   yes   no
-
-//? Solution 1
-// function foo() {
-//   console.log("Foo!");
-
-//   function bar() {
-//     console.log("Bar!");
-//   }
-//   return bar;
-// }
-
-// let netice = foo();
-
-// netice();
-
-//? Solution 2
-// function foo() {
-//   console.log("Foo!");
-
-//   var bar = function () {
-//     console.log("Bar !");
-//     return 1001;
-//   };
-
-//   //   bar();
-//   return bar;
-// }
-
-// let netice = foo();
-
-// let result = netice();
-
-// console.log(result);
-
-//? Solution 3
-// function innerFn() {
-//   let x = 10;
-
-//   function outerFn() {
-//     const y = 11;
-//     return y * x;
-//   }
-
-//   return outerFn;
-// }
-
-// let result = innerFn();
-
-// console.log(result);
-
-function innerFn() {
-  let x = 10;
-
-  function outerFn() {
-    const y = 11;
-    return y * x;
-  }
-
-  return outerFn;
-}
-
-let result = innerFn();
-
-console.log(result);
+console.log(personal1);
