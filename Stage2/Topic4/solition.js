@@ -1,12 +1,12 @@
 // //? Solution 1
-// // function foo() {
-// //   console.log("Foo!");
+// function foo() {
+//   console.log("Foo!");
 
-// //   function bar() {
-// //     console.log("Bar!");
-// //   }
-// //   return bar;
-// // }
+//   function bar() {
+//     console.log("Bar!");
+//   }
+//   return bar;
+// }
 
 // // let netice = foo();
 
