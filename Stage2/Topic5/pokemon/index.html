@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container bg-primary p-5 mt-5">
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlvgt4O7bdc3ZlDEvYvma4MmUh_by2nZrV0A&s"
+              class="card-img-top"
+              height="300"
+              id="imgEl1"
+              alt="..."
+            />
+            <div class="card-body">
+              <p class="card-text text-warning h1 text-center">ME</p>
+              <p class="card-text h3 text-center" id="statusEl1">READY</p>
+              <p class="card-text h4 text-center" id="pointEl1">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="display-1 font-bold text-center text-light">VS</div>
+          <button class="btn-danger btn w-100 mt-4" id="playBtn">PLAY</button>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlvgt4O7bdc3ZlDEvYvma4MmUh_by2nZrV0A&s"
+              class="card-img-top"
+              height="300"
+              id="imgEl2"
+              alt="..."
+            />
+            <div class="card-body">
+              <p class="card-text text-warning h1 text-center">COMP</p>
+              <p class="card-text h3 text-center" id="statusEl2">READY</p>
+              <p class="card-text h4 text-center" id="pointEl2">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
