@@ -40,7 +40,7 @@ const showRender = (options) => {
     status2Img,
   } = options;
 
-  thispoint1 += p1;
+  point1 += p1;
   point2 += p2;
 
   pointEl1.innerHTML = point1;

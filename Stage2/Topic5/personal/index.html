@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark">
+    <main class="container">
+      <div class="row">
+        <h1 class="text-light text-center mt-5">Personal App</h1>
+        <p class="lead text-light text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+          officia porro dolore corrupti ducimus accusamus officiis tempora sed
+          earum dolorem eos sit, eligendi suscipit quisquam alias reiciendis.
+          In, modi dolores?
+        </p>
+      </div>
+
+      <!-- Add Personal -->
+      <div class="w-50 mx-auto my-4">
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="userFullname"
+            placeholder="Your fullname"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="userJobTitle"
+            placeholder="Job title"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="userSalary"
+            placeholder="Your salary"
+          />
+        </div>
+
+        <button class="btn btn-success w-100" id="submitBtn">Create</button>
+      </div>
+
+      <!-- Personals -->
+      <table class="table text-light mt-5">
+        <thead class="bg-warning text-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fullname</th>
+            <th scope="col">Job title</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody id="listEl">
+          <!-- <tr>
+            <th scope="row">1</th>
+            <td>Mark Otto</td>
+            <td>Developer</td>
+            <td>3000$</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
