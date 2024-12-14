@@ -9,8 +9,7 @@ function handlePersonalForm() {
   const userFullname = document.querySelector("#userFullname");
   const userJobTitle = document.querySelector("#userJobTitle");
   const userSalary = document.querySelector("#userSalary");
-
-  const date = new Date();
+  const date = new Date(); //? return timestamp
 
   const personalForm = {
     fullname: userFullname.value,
