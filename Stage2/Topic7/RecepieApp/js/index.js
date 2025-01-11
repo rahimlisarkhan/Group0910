@@ -2,6 +2,10 @@ const postCreate = new bootstrap.Modal(document.getElementById("postCreate"), {
   keyboard: false,
 });
 
+let globalData = [];
+
+let currentElId = null;
+
 //Variables
 const recImg = document.querySelector("#recImg");
 const recTitle = document.querySelector("#recTitle");
@@ -19,11 +23,23 @@ btnSave.addEventListener("click", function () {
   };
 
   //   console.log("payload", payload);
-  createRecipe(form);
+
+  if (currentElId) {
+    uptRecipe(currentElId, form);
+  } else {
+    createRecipe(form);
+  }
 });
 
-// Functions
+function resetFn() {
+  currentElId = null;
+  recTitle.value = "";
+  recDesc.value = "";
+  recImg.value = "";
+  recCousin.value = "";
+}
 
+// Functions
 function renderRecipe(d) {
   document.querySelector("#list").innerHTML = d
     .map(
@@ -43,7 +59,8 @@ function renderRecipe(d) {
               <p class="card-text">
                ${item.body}
               </p>
-              <button class="btn btn-danger">Remove</button>
+              <button class="btn btn-danger" onclick="removeFn(${item.id})">Remove</button>
+              <button class="btn btn-warning" onclick="editFn(${item.id})">Edit</button>
               <a href="./pages/product.html?post_id=${item.id}" class="btn btn-light">
                 Read more...</a
               >
@@ -71,6 +88,7 @@ async function getRecipe() {
 
     console.log("data", data);
 
+    globalData = filterData;
     renderRecipe(filterData);
   } catch (err) {
   } finally {
@@ -92,11 +110,68 @@ async function createRecipe(pay) {
     const data = await res.json();
     postCreate.hide();
 
+    getRecipe();
     console.log("data", data);
   } catch (err) {
   } finally {
+    resetFn();
     btnSave.innerHTML = "Save";
   }
+}
+
+async function uptRecipe(id, pay) {
+  btnSave.innerHTML = "Loading...";
+
+  try {
+    await fetch("https://blog-api-t6u0.onrender.com/posts/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(pay),
+    });
+
+    // const data = await res.json();
+    postCreate.hide();
+
+    getRecipe();
+  } catch (err) {
+  } finally {
+    resetFn();
+    btnSave.innerHTML = "Save";
+  }
+}
+
+// removeFn
+async function removeFn(elId) {
+  try {
+    const res = await fetch(
+      "https://blog-api-t6u0.onrender.com/posts/" + elId,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    getRecipe();
+  } catch (err) {
+  } finally {
+  }
+}
+
+async function editFn(elId) {
+  const element = globalData.find((item) => item.id == elId);
+
+  currentElId = element.id;
+
+  recTitle.value = element.title;
+  recDesc.value = element.body;
+  recImg.value = element.img_url;
+  recCousin.value = element.cousin;
+
+  postCreate.show();
 }
 
 //Starts

@@ -1,67 +1,104 @@
-"https://kontakt.az/about/mebel";
-"https://123.456.789.123/about/mebel";
+// const a = 44;
 
-// CRUD
-// 1.CREATE
-// 2.READ
-// 3.UPDATE
-// 4.DELETE
+// const myObj = {
+//   age: 22,
+//   job_title: "Developer",
+// };
 
-// GET
-const myPromise = fetch("https://blog-api-t6u0.onrender.com/posts", {
-  method: "GET",
+// const list = [1, 2, 3, 45, 5];
+
+// // console.log(localStorage);
+
+// localStorage.setItem("theme_color", a);
+// localStorage.setItem("mode", "light");
+// localStorage.setItem("name", "Izzet");
+// localStorage.setItem("list", JSON.stringify(list));
+// localStorage.setItem("my_data", JSON.stringify(myObj));
+
+// const mode_data = localStorage.getItem("mode");
+// const list_data = localStorage.getItem("list");
+// const list_data = localStorage.getItem("my_data");
+
+// const convertData = JSON.parse(list_data);
+
+// console.log(convertData);
+
+// localStorage.setItem("my_api_key",res.data.access_token)
+
+// localStorage.removeItem("mode");
+// localStorage.clear()
+
+// console.log(localStorage.key(2));
+
+// sessionStorage.setItem("student", "musa");
+
+document.addEventListener("click", function () {
+  const mode = localStorage.getItem("mode");
+
+  if (mode == "light") {
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+    localStorage.setItem("mode", "dark");
+    return;
+  }
+
+  document.body.style.backgroundColor = "white";
+  document.body.style.color = "black";
+  localStorage.setItem("mode", "light");
 });
 
-// POST
-const form = {
-  title: "My blog",
-  body: "Lorem ipsum",
-};
+function getMode() {
+  const mode = localStorage.getItem("mode");
 
-const myPromise2 = fetch("https://blog-api-t6u0.onrender.com/posts", {
-  method: "POST",
-  body: JSON.stringify(form),
+  if (mode == "light") {
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+    return;
+  }
 
-  //   headers:{
-  //     "Content-Type":"application/json",
-  //     "Authorization":"",
-  //     "x-sema-id":""
-  //   }
-});
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "white";
+}
 
-// PUT
-const form1 = {
-  title: "My blog",
-  body: "Lorem ipsum",
-};
+getMode();
 
-const myPromise3 = fetch("https://blog-api-t6u0.onrender.com/posts/102", {
-  method: "PUT",
-  body: JSON.stringify(form1),
-});
+// async function getActors() {
+//   // const my_key = localStorage.getItem("my_api_key")
 
-//DELETE
-const myPromise4 = fetch("https://blog-api-t6u0.onrender.com/posts/102", {
-  method: "DELETE",
-});
+//   const res = fetch("url", {
+//     method: "GET",
+//     headers: {
+//       Authorization: my_key,
+//     },
+//   });
+// }
 
-// CORONA API
-// const url = "https://covid-19-tracking.p.rapidapi.com/v1?country=AZE&city=Baku&citizen=azerbaijani";
-const url = "https://covid-19-tracking.p.rapidapi.com/v1";
-const options = {
-  method: "GET",
-  headers: {
-    "x-rapidapi-key": "9d9588302emsh58804fa5a30d4d9p1b947ajsn659ea6ae2269",
-    "x-rapidapi-host": "covid-19-tracking.p.rapidapi.com",
+// const a = document.cookie;
+
+// document.cookie = "key2=tural;";
+
+// console.log(a);
+
+const Cookie = {
+  setItem: function (key, value) {
+    document.cookie = `${key}=${value};`;
+  },
+
+  getItem: function (key) {
+    const list = document.cookie.split("; ");
+
+    console.log("list", list);
+
+    for (let el of list) {
+      const kicikArray = el.split("=");
+
+      if (kicikArray[0] == key) {
+        return kicikArray[1];
+      }
+    }
   },
 };
 
-const myPromise5 = fetch(url, options);
+const netice = Cookie.getItem("key4");
 
-myPromise5
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  });
+// Cookie.setItem("key4", "aygun");

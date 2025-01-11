@@ -1,7 +1,11 @@
 const submitBtn = document.querySelector("#submitBtn");
 const table = document.querySelector("table");
 
-const data = [];
+// localStore
+const stringData = localStorage.getItem("my_todo_data");
+const data = stringData ? JSON.parse(stringData) : [];
+
+console.log("data", data);
 
 submitBtn.addEventListener("click", handlePersonalForm);
 
@@ -23,6 +27,9 @@ function handlePersonalForm() {
   userSalary.value = "";
 
   data.push(personalForm);
+
+  //localStore
+  localStorage.setItem("my_todo_data", JSON.stringify(data));
 
   console.log("click", personalForm);
   console.log("data", data);
@@ -71,3 +78,5 @@ table.addEventListener("mouseenter", function () {
     alert("Empty table");
   }
 });
+
+renderTable();
