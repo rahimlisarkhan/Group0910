@@ -1,0 +1,12 @@
+.button {
+  background-color: blue;
+  border-radius: 12px;
+  border: none;
+  padding: 12px 24px;
+  transition: all 0.2s;
+  color: #fff;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
