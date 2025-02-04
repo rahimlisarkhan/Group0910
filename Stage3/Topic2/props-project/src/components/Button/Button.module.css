@@ -1,0 +1,36 @@
+.button {
+  border-radius: 8px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: purple;
+}
+
+.outlined {
+  border: 1px solid purple;
+  color: purple;
+}
+
+.danger {
+  background-color: red;
+  color: #fff;
+}
+
+.outlined_danger {
+  border: 1px solid red;
+  color: red;
+}
+
+.warning {
+  background-color: orange;
+  color: #fff;
+}
+
+.outlined_warning {
+  border: 1px solid orange;
+  color: orange;
+}
