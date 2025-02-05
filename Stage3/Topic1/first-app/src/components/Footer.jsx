@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className={style.container}>
       <h3>Footer</h3>
-      <Button></Button>
+      <Button>Musanin duymesin</Button>
     </footer>
   );
 }

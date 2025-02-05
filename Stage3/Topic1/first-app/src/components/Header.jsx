@@ -7,7 +7,7 @@ function Header() {
   return (
     <header className={style.container}>
       <h2>Logo</h2>
-      <Button></Button>
+      <Button>Semanin duymesi</Button>
     </header>
   );
 }
