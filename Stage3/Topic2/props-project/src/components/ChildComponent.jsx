@@ -13,4 +13,7 @@ export default function ChildComponent(props) {
 ChildComponent.propTypes = {
   title: PropTypes.string,
   age: PropTypes.number.isRequired,
+  // data:PropTypes.shape({
+  //   name:""
+  // })
 };

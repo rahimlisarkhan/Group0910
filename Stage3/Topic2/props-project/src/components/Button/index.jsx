@@ -2,16 +2,25 @@ import PropTypes from 'prop-types';
 import styles from './Button.module.css';
 
 function Button(props) {
+  const {
+    variant = 'container',
+    color,
+    title,
+    children,
+    onClick,
+    ...options
+  } = props;
+
   return (
     <button
-      className={`${styles.button} ${props.variant && styles[props.variant]} ${
-        props.variant == 'container'
-          ? styles[props.color]
-          : styles['outlined_' + props.color]
+      className={`${styles.button} ${variant && styles[variant]} ${
+        variant == 'container' ? styles[color] : styles['outlined_' + color]
       }`}
+      onClick={onClick}
       //   style={{ backgroundColor: props.color }}
+      {...options}
     >
-      {props.title ?? props.children}
+      {title ?? children}
     </button>
   );
 }
@@ -23,4 +32,5 @@ Button.propTypes = {
   color: PropTypes.string,
   children: PropTypes.node,
   variant: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
 };
