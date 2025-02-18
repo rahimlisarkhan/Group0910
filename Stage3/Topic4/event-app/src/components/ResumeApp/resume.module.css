@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  height: 100vh;
+}
+
+.preview {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  width: 400px;
+  height: 600px;
+  color: black;
+}

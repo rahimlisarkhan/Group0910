@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { isValidAZPhone } from '../utils/regex';
 
 const initialForm = { full_name: '', age: '', phone: '' };
 
@@ -34,14 +35,15 @@ function Form() {
 
     //? Phone Validate
     if (inputName == 'phone') {
-      const isAzePhone = true;
+      const isAzePhone = isValidAZPhone(newForm.phone);
+
       if (!isAzePhone) {
         let newError = { ...error };
-        newError.phone = 'Nomre standartlara cvab vermir!';
+        newError.phone = 'Nomre standartlara cavab vermir!';
         setError(newError);
       } else {
         let newError = { ...error };
-        newError.full_name = '';
+        newError.phone = '';
         setError(newError);
       }
     }
@@ -79,7 +81,7 @@ function Form() {
         <input name="age" value={form.age} onChange={handleChange} />
         <br />
         <input name="phone" value={form.phone} onChange={handleChange} />
-
+        {error.phone && <div style={{ color: 'red' }}>{error.phone}</div>}
         <br />
         <button onClick={handleSubmit}>Send</button>
       </div>

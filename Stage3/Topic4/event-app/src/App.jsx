@@ -1,10 +1,15 @@
 import './App.css';
-import Form from './components/Form';
+import ResumeApp from './components/ResumeApp';
+// import FormFormik from './components/FormFormik';
+// import Form from './components/Form';
+// import FormHook from './components/FormHook';
 
 function App() {
   return (
     <>
-      <Form />
+      <ResumeApp />
+      {/* <Form /> */}
+      {/* <FormFormik /> */}
       {/* <Event /> */}
     </>
   );
