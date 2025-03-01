@@ -1,17 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const fetcher = axios.create({
-  baseURL: 'https://blog-api-t6u0.onrender.com/',
+  baseURL: "https://blog-api-t6u0.onrender.com/",
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
 fetcher.interceptors.request.use((config) => {
-  console.log('config', config);
-
   config.headers.Authorization = `Breare ${localStorage.getItem(
-    'access_token'
+    "access_token"
   )}`;
 
   return config;
@@ -27,9 +25,8 @@ fetcher.interceptors.response.use(
     return res;
   },
   (err) => {
-    console.log('err', err);
     if (err.status == 401) {
-      localStorage.removeItem('access_token');
+      localStorage.removeItem("access_token");
     }
     return err;
   }

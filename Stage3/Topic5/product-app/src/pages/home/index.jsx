@@ -1,32 +1,61 @@
-import { useEffect, useState } from 'react';
-import { ProductCard } from '../../common/components/ProductCard';
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ProductCard } from "../../common/components/ProductCard";
 import {
   addProductData,
   getProductData,
   rmvProductData,
   uptProductData,
-} from '../../services/product';
-import { Button, Flex, Spin } from 'antd';
-import ProductModal from '../../common/components/ProductModal';
+} from "../../services/product";
+import { Alert, Button, Flex, Spin } from "antd";
+import ProductModal from "../../common/components/ProductModal";
+import { useDocumentTitle } from "../../common/hooks/useDocumentTitle";
+import { useBoolean } from "../../common/hooks/useBoolean";
+import { useNetwork } from "../../common/hooks/useNetwork";
+
+const list = ["list1", "list2", "list3"];
 
 const HomePage = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentProduct, setCurrentProduct] = useState(null);
 
-  const [showModal, setShowModal] = useState(false);
+  useDocumentTitle(currentProduct ? currentProduct.title : `Product App`);
+
+  const online = useNetwork();
+
+  // const myValue = useRef(0);
+
+  // let timeout = useRef(null);
+  // let timeout = null;
+
+  // const id = Date.now()
+
+  // const [showModal, setShowModal] = useState(false);
+
+  const productModal = useBoolean();
+
+  console.log("productModal", productModal.value);
+
+  // console.log("myValue", myValue);
 
   useEffect(() => {
     initData();
+
+    // timeout = setTimeout(() => {
+    //   console.log("timeout");
+    // }, 1000);
+
+    // clearTimeout(timeout);
   }, []);
 
   async function initData() {
     const resdata = await getProductData();
     setData(resdata);
     setLoading(false);
+    // myValue.current = resdata.length;
   }
 
-  async function handleSaveData(form) {
+  const handleSaveData = async (form) => {
     if (currentProduct) {
       const resData = await uptProductData(currentProduct.id, form);
 
@@ -43,34 +72,44 @@ const HomePage = () => {
       setData((prev) => [resData, ...prev]);
     }
 
-    setShowModal(false);
-  }
+    // setShowModal(false);
+    productModal.setFalse();
+  };
 
-  async function handleRemoveData(id) {
-    await rmvProductData(id);
-    let newPosts = data.filter((product) => product.id !== id);
-    setData(newPosts);
-  }
+  const handleRemoveData = useCallback(
+    async (id) => {
+      await rmvProductData(id);
+      let newPosts = data.filter((product) => product.id !== id);
+      setData(newPosts);
+    },
+    [data]
+  );
 
-  function handleEditData(product) {
-    setCurrentProduct(product);
-    setShowModal(true);
-  }
+  const handleEditData = useCallback(
+    (product) => {
+      setCurrentProduct(product);
+      // setShowModal(true);
+      productModal.setTrue();
+    },
+    [productModal]
+  );
 
-  const filterData = data.filter((item) => item.id > 95).reverse();
+  const filterData = useMemo(() => {
+    return data.filter((item) => item.id > 95).reverse();
+  }, [data]);
 
   if (loading) {
     return (
       <div
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
-          width: '100%',
-          minHeight: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          width: "100%",
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Spin size="large" />
@@ -84,21 +123,28 @@ const HomePage = () => {
         type="primary"
         onClick={() => {
           setCurrentProduct(null);
-          setShowModal(true);
+          // setShowModal(true);
+          productModal.setTrue();
         }}
       >
+        {/* Create + {myValue.current} */}
         Create +
       </Button>
+      <Alert
+        type={online ? "success" : "error"}
+        message={online ? "Online" : "Offline"}
+      />
+      <br />
       <Flex gap={24} wrap>
         <ProductModal
-          open={showModal}
+          open={productModal.value}
           currentProduct={currentProduct}
-          onClose={() => setShowModal(false)}
+          onClose={productModal.setFalse}
           onData={handleSaveData}
         />
         {filterData.map((item) => (
           <ProductCard
-            key={'product' + item.id}
+            key={"product" + item.id}
             img_url={item.img_url}
             title={item.title}
             description={item.description}

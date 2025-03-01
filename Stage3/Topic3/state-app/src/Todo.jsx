@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import TodoCard from './TodoCard';
-import TodoInput from './TodoInput';
+import { useLocalStore } from "./hooks/useLocalStore";
+import TodoCard from "./TodoCard";
+import TodoInput from "./TodoInput";
 
 function Todo() {
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useLocalStore("todos");
+  // const [localProduct, setLocalProduct] = useLocalStore("products");
 
   function handleAdd(text) {
     const payload = {
@@ -15,6 +17,7 @@ function Todo() {
 
     console.log(data);
 
+    // setTodos(data);
     setTodos(data);
   }
 
@@ -25,6 +28,7 @@ function Todo() {
 
     const filterTodos = newTodos.filter((item) => item.id !== todoId);
 
+    // setTodos(filterTodos);
     setTodos(filterTodos);
   }
 
@@ -36,9 +40,9 @@ function Todo() {
       <TodoInput onAddText={handleAdd} />
 
       <div className="list">
-        {todos.map((item) => (
+        {localData.map((item) => (
           <TodoCard
-            key={'todo-' + item.id}
+            key={"todo-" + item.id}
             title={item.text}
             onDelete={() => handleRemove(item.id)}
           />

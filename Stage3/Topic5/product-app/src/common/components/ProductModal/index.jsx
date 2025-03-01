@@ -1,15 +1,15 @@
-import { Button, Flex, Input, Modal } from 'antd';
-import { useFormik } from 'formik';
-import PropTypes from 'prop-types';
-import { useEffect } from 'react';
+import { Button, Flex, Input, Modal } from "antd";
+import { useFormik } from "formik";
+import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 function ProductModal({ open, currentProduct, onClose, onData }) {
   const { handleChange, handleSubmit, values, setFieldValue } = useFormik({
     initialValues: {
-      title: '',
-      description: '',
-      img_url: '',
-      price: '',
+      title: "",
+      description: "",
+      img_url: "",
+      price: "",
     },
     onSubmit: (values, options) => {
       onData(values);
@@ -18,13 +18,11 @@ function ProductModal({ open, currentProduct, onClose, onData }) {
   });
 
   useEffect(() => {
-    setFieldValue('title', currentProduct?.title || '');
-    setFieldValue('description', currentProduct?.description || '');
-    setFieldValue('price', currentProduct?.price || '');
-    setFieldValue('img_url', currentProduct?.img_url || '');
+    setFieldValue("title", currentProduct?.title || "");
+    setFieldValue("description", currentProduct?.description || "");
+    setFieldValue("price", currentProduct?.price || "");
+    setFieldValue("img_url", currentProduct?.img_url || "");
   }, [currentProduct]);
-
-  console.log('ProductModal, currentProduct', currentProduct);
 
   return (
     <Modal title="Product Modal" open={open} onCancel={onClose} footer={null}>
