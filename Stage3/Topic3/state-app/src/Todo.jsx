@@ -1,11 +1,27 @@
-import { useLocalStore } from "./hooks/useLocalStore";
 import TodoCard from "./TodoCard";
 import TodoInput from "./TodoInput";
+import { useReducer } from "react";
+
+const initialArg = {
+  todos: [],
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "ADD_TODO":
+      return { ...state, todos: [action.payload, ...state.todos] };
+    case "REMOVE_TODO":
+      return {
+        ...state,
+        todos: state.todos.filter((item) => item.id !== action.payload),
+      };
+    default:
+      return state;
+  }
+}
 
 function Todo() {
-  // const [todos, setTodos] = useState([]);
-  const [todos, setTodos] = useLocalStore("todos");
-  // const [localProduct, setLocalProduct] = useLocalStore("products");
+  const [state, dispatch] = useReducer(reducer, initialArg);
 
   function handleAdd(text) {
     const payload = {
@@ -13,23 +29,11 @@ function Todo() {
       text,
     };
 
-    const data = [payload, ...todos];
-
-    console.log(data);
-
-    // setTodos(data);
-    setTodos(data);
+    dispatch({ type: "ADD_TODO", payload });
   }
 
   function handleRemove(todoId) {
-    console.log(todoId);
-
-    const newTodos = [...todos];
-
-    const filterTodos = newTodos.filter((item) => item.id !== todoId);
-
-    // setTodos(filterTodos);
-    setTodos(filterTodos);
+    dispatch({ type: "REMOVE_TODO", payload: todoId });
   }
 
   return (
@@ -40,7 +44,7 @@ function Todo() {
       <TodoInput onAddText={handleAdd} />
 
       <div className="list">
-        {localData.map((item) => (
+        {state.todos.map((item) => (
           <TodoCard
             key={"todo-" + item.id}
             title={item.text}
