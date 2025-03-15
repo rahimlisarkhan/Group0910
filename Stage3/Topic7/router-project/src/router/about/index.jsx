@@ -11,11 +11,11 @@ function About() {
         <h2>About</h2>
 
         <div>
-          <div>
+          <nav>
             <Link to="company">Company</Link>
             <br />
             <Link to="other">Other</Link>
-          </div>
+          </nav>
 
           <div style={{ border: "1px solid green", padding: "10px" }}>
             <Routes>
