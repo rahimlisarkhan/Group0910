@@ -1,7 +1,12 @@
-import React, { useReducer } from "react";
+import React, { useReducer } from 'react';
 
 const initialContext = {
-  state: {},
+  state: {
+    user: null,
+    loading: true,
+    products: [],
+    basket: [],
+  },
   dispatch: () => {},
 };
 
@@ -14,11 +19,11 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "SET_USER":
+    case 'SET_USER':
       return { ...state, user: action.payload };
-    case "SET_LOADING":
+    case 'SET_LOADING':
       return { ...state, loading: action.payload };
-    case "ADD_TO_BASKET": {
+    case 'ADD_TO_BASKET': {
       const isHasBasket = state.basket.find(
         (item) => item.id === action.payload.id
       );
@@ -34,7 +39,7 @@ function reducer(state, action) {
       return { ...state, basket: filterData };
     }
 
-    case "SET_PRODUCTS":
+    case 'SET_PRODUCTS':
       return { ...state, products: action.payload };
     default:
       return state;
@@ -50,12 +55,9 @@ function GlobalProvider({ children }) {
   //   const [loading, setLoading] = React.useState(true);
   //   const [basket, setBasket] = React.useState([]);
 
-  const value = {
-    user: state.user,
-    products: state.products,
-    loading: state.loading,
-    basket: state.basket,
-    dispatch,
+  const initUser = () => {
+    const userData = JSON.parse(localStorage.getItem('user'));
+    dispatch({ type: 'SET_USER', payload: userData });
   };
 
   //   const value = {
@@ -66,6 +68,15 @@ function GlobalProvider({ children }) {
   //     basket,
   //     setBasket,
   //   };
+
+  const value = {
+    user: state.user,
+    products: state.products,
+    loading: state.loading,
+    basket: state.basket,
+    initUser,
+    dispatch,
+  };
 
   return (
     <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>
