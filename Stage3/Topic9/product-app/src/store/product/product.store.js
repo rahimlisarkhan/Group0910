@@ -12,6 +12,7 @@ const initial = {
   product: null,
   count: 0,
   loading: false,
+  error: null,
 };
 
 export const useProductStore = create((set, get) => ({
@@ -23,15 +24,20 @@ export const useProductStore = create((set, get) => ({
     },
 
     getAllProduct: async () => {
-      set({ loading: true });
-      const resData = await getProductData();
-      set({ products: resData, loading: false });
+      set({ loading: true }); // Pending
+      try {
+        const resData = await getProductData();
+        set({ products: resData, loading: false }); // Fulfilled
+      } catch (err) {
+        console.log('err', err);
+        set({ loading: false, error: err.message }); // Rejected
+      }
     },
 
     getOneProduct: async (id) => {
-      set({ loading: true });
+      set({ loading: true }); // Pending
 
-      const resData = await getProductId(id);
+      const resData = await getProductId(id); // Fulfilled
       set({ product: resData, loading: false });
     },
 

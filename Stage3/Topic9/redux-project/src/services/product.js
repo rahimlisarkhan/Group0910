@@ -1,12 +1,16 @@
-import { fetcher } from '../common/helpers/fetcher';
+import { fetcher } from './fetcher';
 
 export async function getProductData() {
-  const response = await fetcher({
-    method: 'GET',
-    url: 'posts',
-  });
+  try {
+    const response = await fetcher({
+      method: 'GET',
+      url: 'posts',
+    });
 
-  return response.data;
+    return response.data;
+  } catch (err) {
+    return err;
+  }
 }
 
 export async function getProductId(id) {
