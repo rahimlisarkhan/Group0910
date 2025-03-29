@@ -7,6 +7,8 @@ import {
   // setLoading,
   // setProducts,
 } from './store/slice/productSlice';
+import Pricing from './components/Pricing';
+import Badge from './uikit/Badge';
 
 function Product() {
   const dispatch = useDispatch();
@@ -50,8 +52,11 @@ function Product() {
   return (
     <div>
       Product
+      <Badge content="Message" color="amber" size="lg" />
+      <button className=" rounded-[6px] text-[46px]">Test </button>
+      <Pricing />
       {products.map((product) => (
-        <div key={product.id}>
+        <div key={product.id} className="mt-lg-2 mt-sm-6">
           <h3>{product.title}</h3>
           <p>{product.price}</p>
         </div>

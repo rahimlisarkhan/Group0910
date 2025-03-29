@@ -23,6 +23,7 @@ export function Counter() {
         >
           Increment
         </button>
+        <button className="rounded-lg bg-red-700 text-light"></button>
         <span>{value}</span>
         <button
           aria-label="Decrement value"
