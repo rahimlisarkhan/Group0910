@@ -30,7 +30,7 @@ function Product() {
   //   getProductData()
   //     .then((data) => {
   //       console.log(data);
-  //       dispatch(setProducts(data));
+  //       dispatch(setProducts(data));22
   //     })
   //     .catch((error) => {
   //       console;
