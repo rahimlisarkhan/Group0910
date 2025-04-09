@@ -1,11 +1,17 @@
 // 'use client';
 
 import { useProductStore } from '@/store/product.store';
-import UserAction from '@/ui/UserAction';
+// import UserAction from '@/ui/UserAction';
 // import Userlist from '@/ui/Header/Userlist';
 import axios from 'axios';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 // import { useEffect, useState } from 'react';
+
+const UserAction = dynamic(() => import('@/ui/UserAction'), {
+  ssr: false,
+});
+// import { UserInfo } from '@/ui/Header/UserInfo';
 
 export default async function Home(props) {
   // const [data, setData] = useState([]);
